@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IP Software Technologies - Our Services. Custom web development, Laravel, PHP, Flutter apps, ERP, CRM, e-commerce, API development, UI/UX design, and more.">
+    <meta name="keywords" content="web development services, laravel development, php development, flutter app, ERP solutions, CRM development, e-commerce, API development, UI/UX design">
+    <meta name="author" content="IP Software Technologies">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Our Services | IP Software Technologies">
+    <meta property="og:description" content="Comprehensive software development services - from web apps to mobile apps, ERP systems to cloud deployment.">
+    <meta property="og:image" content="assets/images/og-image.jpg">
+
+    <title>Our Services | IP Software Technologies</title>
+
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        .service-detail-section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .service-detail-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+
+        .service-detail-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .service-detail-row.reverse {
+            direction: rtl;
+        }
+
+        .service-detail-row.reverse > * {
+            direction: ltr;
+        }
+
+        .service-detail-content {
+            max-width: 560px;
+        }
+
+        .service-detail-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .service-detail-badge.blue {
+            background: rgba(29, 170, 216, 0.08);
+            border: 1px solid rgba(29, 170, 216, 0.15);
+            color: var(--primary);
+        }
+
+        .service-detail-badge.orange {
+            background: rgba(237, 143, 40, 0.08);
+            border: 1px solid rgba(237, 143, 40, 0.15);
+            color: var(--secondary);
+        }
+
+        .service-detail-title {
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .service-detail-desc {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .service-features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 36px;
+        }
+
+        .service-feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .service-feature-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .service-feature-icon.blue {
+            background: rgba(29, 170, 216, 0.08);
+            color: var(--primary);
+        }
+
+        .service-feature-icon.orange {
+            background: rgba(237, 143, 40, 0.08);
+            color: var(--secondary);
+        }
+
+        .service-feature-text h5 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .service-feature-text p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .service-detail-visual {
+            position: relative;
+        }
+
+        .service-visual-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-visual-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        .service-visual-icon {
+            width: 90px;
+            height: 90px;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .service-visual-icon.blue {
+            background: rgba(29, 170, 216, 0.08);
+            color: var(--primary);
+        }
+
+        .service-visual-icon.orange {
+            background: rgba(237, 143, 40, 0.08);
+            color: var(--secondary);
+        }
+
+        .service-visual-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service-visual-stat {
+            text-align: center;
+            padding: 16px;
+            background: var(--background);
+            border-radius: var(--radius-md);
+        }
+
+        .service-visual-stat-number {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 4px;
+        }
+
+        .service-visual-stat-label {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .service-floating-shape {
+            position: absolute;
+            border: 2px solid rgba(29, 170, 216, 0.15);
+            border-radius: var(--radius-lg);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .service-floating-shape-1 {
+            width: 80px;
+            height: 80px;
+            top: -20px;
+            right: -20px;
+        }
+
+        .service-floating-shape-2 {
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            left: -30px;
+            animation-delay: 3s;
+        }
+
+        .service-alt-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-alt-card .service-alt-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .service-alt-item {
+            padding: 24px;
+            background: var(--background);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            transition: var(--transition-smooth);
+        }
+
+        .service-alt-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .service-alt-item i {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .service-alt-item h5 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .service-alt-item p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .service-divider {
+            width: 100%;
+            height: 1px;
+            background: var(--border);
+            margin: 0 0 100px;
+        }
+
+        .cta-section {
+            background: var(--gradient-primary);
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="loading">
+
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-logo">IP <span>Software</span></div>
+        <div class="loader-bar"></div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress"></div>
+
+    <!-- Cursor Follower -->
+    <div class="cursor-follower"></div>
+
+    <!-- ========== HEADER ========== -->
+    <header class="header transparent">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="IP Software Technologies" class="logo-img">
+            </a>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link active">Services</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="technologies.html" class="nav-link">Technologies</a>
+                <a href="team.html" class="nav-link">Team</a>
+                <a href="careers.html" class="nav-link">Careers</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <a href="contact.html" class="btn btn-primary btn-sm nav-cta">Get a Quote</a>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link active">Services</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="technologies.html" class="nav-link">Technologies</a>
+        <a href="team.html" class="nav-link">Team</a>
+        <a href="careers.html" class="nav-link">Careers</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="contact.html" class="btn btn-primary" style="margin-top: 20px;">Get a Quote</a>
+    </div>
+
+    <!-- ========== PAGE HERO ========== -->
+    <section class="page-hero">
+        <div class="hero-mesh">
+            <div class="mesh-gradient-1"></div>
+            <div class="mesh-gradient-2"></div>
+        </div>
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="section-badge reveal" style="background: rgba(29, 170, 216, 0.1); border-color: rgba(29, 170, 216, 0.2); color: var(--primary-light);">
+                    <i class="fas fa-cog"></i> Our Services
+                </div>
+                <h1 class="page-hero-title reveal">
+                    Solutions That <span class="gradient-text">Transform</span> Businesses
+                </h1>
+                <p class="page-hero-desc reveal">
+                    From custom web applications to enterprise systems, we deliver end-to-end software solutions that drive growth and innovation.
+                </p>
+                <div class="breadcrumb reveal">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span class="current">Services</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVICE 1: Custom Web Development ========== -->
+    <section class="service-detail-section">
+        <div class="container">
+            <div class="service-detail-row">
+                <div class="service-detail-content reveal-left">
+                    <div class="service-detail-badge blue">
+                        <i class="fas fa-code"></i> Web Development
+                    </div>
+                    <h2 class="service-detail-title">Custom <span class="gradient-text">Web Development</span></h2>
+                    <p class="service-detail-desc">
+                        We build powerful, scalable web applications tailored to your unique business requirements. Using modern frameworks and clean architecture, our solutions are designed to perform and grow with your business.
+                    </p>
+                    <div class="service-features-list">
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon blue"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Full-Stack Solutions</h5>
+                                <p>End-to-end development from frontend to backend with seamless integration.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon blue"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Responsive Design</h5>
+                                <p>Pixel-perfect interfaces that work flawlessly across all devices and screen sizes.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon blue"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>SEO Optimized</h5>
+                                <p>Built with search engine best practices to maximize your online visibility.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon blue"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>High Performance</h5>
+                                <p>Optimized for speed with fast load times and smooth interactions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary">
+                        Start Your Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-detail-visual reveal-right">
+                    <div class="service-visual-card">
+                        <div class="service-floating-shape service-floating-shape-1"></div>
+                        <div class="service-floating-shape service-floating-shape-2"></div>
+                        <div class="service-visual-icon blue"><i class="fas fa-code"></i></div>
+                        <div class="service-visual-stats">
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">100+</div>
+                                <div class="service-visual-stat-label">Web Apps Built</div>
+                            </div>
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">99%</div>
+                                <div class="service-visual-stat-label">Uptime SLA</div>
+                            </div>
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">3s</div>
+                                <div class="service-visual-stat-label">Avg Load Time</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== SERVICE 2: Laravel Development ========== -->
+            <div class="service-detail-row reverse">
+                <div class="service-detail-content reveal-right">
+                    <div class="service-detail-badge orange">
+                        <i class="fab fa-laravel"></i> Laravel
+                    </div>
+                    <h2 class="service-detail-title">Laravel <span class="gradient-text">Development</span></h2>
+                    <p class="service-detail-desc">
+                        Harness the power of Laravel for robust, secure, and maintainable backend systems. Our Laravel experts build enterprise-grade applications with elegant code and scalable architecture.
+                    </p>
+                    <div class="service-features-list">
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon orange"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Enterprise Architecture</h5>
+                                <p>Clean, modular code following SOLID principles for long-term maintainability.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon orange"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>RESTful APIs</h5>
+                                <p>Well-documented APIs for seamless frontend-backend communication.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon orange"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Database Design</h5>
+                                <p>Optimized database schemas with migrations and seeders for reliability.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon orange"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Queue & Jobs</h5>
+                                <p>Asynchronous task processing for lightning-fast user experiences.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary">
+                        Start Your Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-detail-visual reveal-left">
+                    <div class="service-visual-card">
+                        <div class="service-floating-shape service-floating-shape-1"></div>
+                        <div class="service-floating-shape service-floating-shape-2"></div>
+                        <div class="service-visual-icon orange"><i class="fab fa-laravel"></i></div>
+                        <div class="service-visual-stats">
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">80+</div>
+                                <div class="service-visual-stat-label">Laravel Projects</div>
+                            </div>
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">10</div>
+                                <div class="service-visual-stat-label">Laravel Experts</div>
+                            </div>
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">5+</div>
+                                <div class="service-visual-stat-label">Years Experience</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== SERVICE 3: PHP Development ========== -->
+            <div class="service-detail-row">
+                <div class="service-detail-content reveal-left">
+                    <div class="service-detail-badge blue">
+                        <i class="fab fa-php"></i> PHP
+                    </div>
+                    <h2 class="service-detail-title">PHP <span class="gradient-text">Development</span></h2>
+                    <p class="service-detail-desc">
+                        Leverage the power of PHP for dynamic, server-side applications that handle millions of requests. From custom CMS to complex web platforms, we deliver robust PHP solutions.
+                    </p>
+                    <div class="service-features-list">
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon blue"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Custom Applications</h5>
+                                <p>Bespoke PHP solutions built from scratch to match your exact specifications.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon blue"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>CMS Development</h5>
+                                <p>Custom content management systems for easy website administration.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon blue"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Legacy Modernization</h5>
+                                <p>Upgrade and refactor legacy PHP code to modern standards and frameworks.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon blue"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Performance Tuning</h5>
+                                <p>Optimization of existing PHP applications for maximum speed and efficiency.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary">
+                        Start Your Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-detail-visual reveal-right">
+                    <div class="service-visual-card">
+                        <div class="service-floating-shape service-floating-shape-1"></div>
+                        <div class="service-floating-shape service-floating-shape-2"></div>
+                        <div class="service-visual-icon blue"><i class="fab fa-php"></i></div>
+                        <div class="service-visual-stats">
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">120+</div>
+                                <div class="service-visual-stat-label">PHP Projects</div>
+                            </div>
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">15</div>
+                                <div class="service-visual-stat-label">PHP Developers</div>
+                            </div>
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">8+</div>
+                                <div class="service-visual-stat-label">Years Experience</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== SERVICE 4: Flutter App Development ========== -->
+            <div class="service-detail-row reverse">
+                <div class="service-detail-content reveal-right">
+                    <div class="service-detail-badge orange">
+                        <i class="fab fa-flutter"></i> Flutter
+                    </div>
+                    <h2 class="service-detail-title">Flutter App <span class="gradient-text">Development</span></h2>
+                    <p class="service-detail-desc">
+                        Build beautiful, natively compiled mobile applications for iOS and Android from a single codebase. Our Flutter experts create stunning, performant apps that users love.
+                    </p>
+                    <div class="service-features-list">
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon orange"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Cross-Platform</h5>
+                                <p>One codebase for iOS and Android, reducing development time and cost.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon orange"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Beautiful UI</h5>
+                                <p>Custom animations and smooth transitions for premium user experiences.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon orange"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Native Performance</h5>
+                                <p>Compiled to native ARM code for blazing-fast performance.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon orange"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>App Store Deployment</h5>
+                                <p>Full support for publishing to Google Play and Apple App Store.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary">
+                        Start Your Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-detail-visual reveal-left">
+                    <div class="service-visual-card">
+                        <div class="service-floating-shape service-floating-shape-1"></div>
+                        <div class="service-floating-shape service-floating-shape-2"></div>
+                        <div class="service-visual-icon orange"><i class="fab fa-flutter"></i></div>
+                        <div class="service-visual-stats">
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">40+</div>
+                                <div class="service-visual-stat-label">Apps Published</div>
+                            </div>
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">4.8</div>
+                                <div class="service-visual-stat-label">Avg App Rating</div>
+                            </div>
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">500K+</div>
+                                <div class="service-visual-stat-label">Downloads</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== SERVICE 5: ERP Solutions ========== -->
+            <div class="service-detail-row">
+                <div class="service-detail-content reveal-left">
+                    <div class="service-detail-badge blue">
+                        <i class="fas fa-chart-line"></i> Enterprise
+                    </div>
+                    <h2 class="service-detail-title">ERP <span class="gradient-text">Solutions</span></h2>
+                    <p class="service-detail-desc">
+                        Streamline your entire business operation with a custom ERP system. We build comprehensive solutions that integrate finance, HR, inventory, procurement, and more into one unified platform.
+                    </p>
+                    <div class="service-features-list">
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon blue"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Modular Design</h5>
+                                <p>Add or remove modules as your business evolves and grows.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon blue"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Real-Time Analytics</h5>
+                                <p>Powerful dashboards with actionable insights for data-driven decisions.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon blue"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Role-Based Access</h5>
+                                <p>Granular permission controls for different departments and users.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon blue"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Automated Workflows</h5>
+                                <p>Automate repetitive tasks to increase efficiency and reduce errors.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary">
+                        Start Your Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-detail-visual reveal-right">
+                    <div class="service-visual-card">
+                        <div class="service-floating-shape service-floating-shape-1"></div>
+                        <div class="service-floating-shape service-floating-shape-2"></div>
+                        <div class="service-visual-icon blue"><i class="fas fa-chart-line"></i></div>
+                        <div class="service-visual-stats">
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">25+</div>
+                                <div class="service-visual-stat-label">ERP Systems Built</div>
+                            </div>
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">40%</div>
+                                <div class="service-visual-stat-label">Cost Reduction</div>
+                            </div>
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">60%</div>
+                                <div class="service-visual-stat-label">Efficiency Gain</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== SERVICE 6: CRM Development ========== -->
+            <div class="service-detail-row reverse">
+                <div class="service-detail-content reveal-right">
+                    <div class="service-detail-badge orange">
+                        <i class="fas fa-users-cog"></i> CRM
+                    </div>
+                    <h2 class="service-detail-title">CRM <span class="gradient-text">Development</span></h2>
+                    <p class="service-detail-desc">
+                        Build stronger customer relationships with a custom CRM system. We design intelligent CRM solutions that streamline sales pipelines, automate marketing, and enhance customer service.
+                    </p>
+                    <div class="service-features-list">
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon orange"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Sales Pipeline</h5>
+                                <p>Track leads, opportunities, and deals through every stage of the funnel.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon orange"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Contact Management</h5>
+                                <p>Centralized customer database with complete interaction history.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon orange"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Marketing Automation</h5>
+                                <p>Email campaigns, follow-ups, and lead scoring on autopilot.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon orange"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Reporting & Insights</h5>
+                                <p>Comprehensive reports on sales performance and customer metrics.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary">
+                        Start Your Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-detail-visual reveal-left">
+                    <div class="service-visual-card">
+                        <div class="service-floating-shape service-floating-shape-1"></div>
+                        <div class="service-floating-shape service-floating-shape-2"></div>
+                        <div class="service-visual-icon orange"><i class="fas fa-users-cog"></i></div>
+                        <div class="service-visual-stats">
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">20+</div>
+                                <div class="service-visual-stat-label">CRM Solutions</div>
+                            </div>
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">35%</div>
+                                <div class="service-visual-stat-label">Sales Increase</div>
+                            </div>
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">50%</div>
+                                <div class="service-visual-stat-label">Faster Follow-ups</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== SERVICE 7: HR Management Systems ========== -->
+            <div class="service-detail-row">
+                <div class="service-detail-content reveal-left">
+                    <div class="service-detail-badge blue">
+                        <i class="fas fa-user-tie"></i> Human Resources
+                    </div>
+                    <h2 class="service-detail-title">HR Management <span class="gradient-text">Systems</span></h2>
+                    <p class="service-detail-desc">
+                        Automate and optimize your HR processes with a comprehensive management system. From recruitment to retirement, we build HR solutions that handle every aspect of workforce management.
+                    </p>
+                    <div class="service-features-list">
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon blue"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Payroll Management</h5>
+                                <p>Automated salary calculations, deductions, and payment processing.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon blue"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Attendance Tracking</h5>
+                                <p>Biometric integration, leave management, and shift scheduling.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon blue"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Recruitment Portal</h5>
+                                <p>End-to-end hiring workflow from job posting to onboarding.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon blue"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Performance Reviews</h5>
+                                <p>Goal setting, KPI tracking, and 360-degree feedback systems.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary">
+                        Start Your Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-detail-visual reveal-right">
+                    <div class="service-visual-card">
+                        <div class="service-floating-shape service-floating-shape-1"></div>
+                        <div class="service-floating-shape service-floating-shape-2"></div>
+                        <div class="service-visual-icon blue"><i class="fas fa-user-tie"></i></div>
+                        <div class="service-visual-stats">
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">15+</div>
+                                <div class="service-visual-stat-label">HR Systems</div>
+                            </div>
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">10K+</div>
+                                <div class="service-visual-stat-label">Employees Managed</div>
+                            </div>
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">70%</div>
+                                <div class="service-visual-stat-label">Time Saved</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== SERVICE 8: E-Commerce Development ========== -->
+            <div class="service-detail-row reverse">
+                <div class="service-detail-content reveal-right">
+                    <div class="service-detail-badge orange">
+                        <i class="fas fa-shopping-cart"></i> E-Commerce
+                    </div>
+                    <h2 class="service-detail-title">E-Commerce <span class="gradient-text">Development</span></h2>
+                    <p class="service-detail-desc">
+                        Launch your online store with a feature-rich e-commerce platform. We build custom shopping experiences with secure payments, inventory management, and marketing tools that drive sales.
+                    </p>
+                    <div class="service-features-list">
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon orange"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Payment Integration</h5>
+                                <p>Stripe, PayPal, and local payment gateways with secure checkout.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon orange"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Inventory Management</h5>
+                                <p>Real-time stock tracking, alerts, and automated reordering.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon orange"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Multi-Vendor Support</h5>
+                                <p>Marketplace functionality with vendor dashboards and commissions.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon orange"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>SEO & Marketing</h5>
+                                <p>Built-in tools for promotions, discounts, and search optimization.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary">
+                        Start Your Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-detail-visual reveal-left">
+                    <div class="service-visual-card">
+                        <div class="service-floating-shape service-floating-shape-1"></div>
+                        <div class="service-floating-shape service-floating-shape-2"></div>
+                        <div class="service-visual-icon orange"><i class="fas fa-shopping-cart"></i></div>
+                        <div class="service-visual-stats">
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">30+</div>
+                                <div class="service-visual-stat-label">Stores Built</div>
+                            </div>
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">200%</div>
+                                <div class="service-visual-stat-label">Avg Sales Growth</div>
+                            </div>
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">99.9%</div>
+                                <div class="service-visual-stat-label">Uptime</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== SERVICE 9: API Development ========== -->
+            <div class="service-detail-row">
+                <div class="service-detail-content reveal-left">
+                    <div class="service-detail-badge blue">
+                        <i class="fas fa-plug"></i> APIs
+                    </div>
+                    <h2 class="service-detail-title">API <span class="gradient-text">Development</span></h2>
+                    <p class="service-detail-desc">
+                        Connect your systems and enable seamless data flow with custom API development. We build secure, well-documented RESTful and GraphQL APIs that power modern applications.
+                    </p>
+                    <div class="service-features-list">
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon blue"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>RESTful APIs</h5>
+                                <p>Standards-compliant APIs with proper HTTP methods and status codes.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon blue"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Third-Party Integrations</h5>
+                                <p>Connect with payment gateways, CRMs, ERPs, and external services.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon blue"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>API Documentation</h5>
+                                <p>Comprehensive Swagger/OpenAPI documentation for easy integration.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon blue"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Rate Limiting & Security</h5>
+                                <p>OAuth 2.0, JWT tokens, and rate limiting for secure API access.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary">
+                        Start Your Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-detail-visual reveal-right">
+                    <div class="service-visual-card">
+                        <div class="service-floating-shape service-floating-shape-1"></div>
+                        <div class="service-floating-shape service-floating-shape-2"></div>
+                        <div class="service-visual-icon blue"><i class="fas fa-plug"></i></div>
+                        <div class="service-visual-stats">
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">60+</div>
+                                <div class="service-visual-stat-label">APIs Built</div>
+                            </div>
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">100M+</div>
+                                <div class="service-visual-stat-label">API Calls/Month</div>
+                            </div>
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">50ms</div>
+                                <div class="service-visual-stat-label">Avg Response</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== SERVICE 10: UI/UX Design ========== -->
+            <div class="service-detail-row reverse">
+                <div class="service-detail-content reveal-right">
+                    <div class="service-detail-badge orange">
+                        <i class="fas fa-palette"></i> Design
+                    </div>
+                    <h2 class="service-detail-title">UI/UX <span class="gradient-text">Design</span></h2>
+                    <p class="service-detail-desc">
+                        Create exceptional user experiences that delight your customers. Our design team crafts intuitive interfaces through research-driven design thinking and modern aesthetics.
+                    </p>
+                    <div class="service-features-list">
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon orange"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>User Research</h5>
+                                <p>Deep understanding of user behavior through interviews and analytics.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon orange"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Wireframing & Prototyping</h5>
+                                <p>Interactive prototypes for validation before development begins.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon orange"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Design Systems</h5>
+                                <p>Scalable component libraries for consistent brand experience.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon orange"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Usability Testing</h5>
+                                <p>Iterative testing to ensure maximum user satisfaction and conversion.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary">
+                        Start Your Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-detail-visual reveal-left">
+                    <div class="service-visual-card">
+                        <div class="service-floating-shape service-floating-shape-1"></div>
+                        <div class="service-floating-shape service-floating-shape-2"></div>
+                        <div class="service-visual-icon orange"><i class="fas fa-palette"></i></div>
+                        <div class="service-visual-stats">
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">80+</div>
+                                <div class="service-visual-stat-label">UI/UX Projects</div>
+                            </div>
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">95%</div>
+                                <div class="service-visual-stat-label">User Satisfaction</div>
+                            </div>
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">40%</div>
+                                <div class="service-visual-stat-label">Better Conversions</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== SERVICE 11: Software Maintenance ========== -->
+            <div class="service-detail-row">
+                <div class="service-detail-content reveal-left">
+                    <div class="service-detail-badge blue">
+                        <i class="fas fa-tools"></i> Support
+                    </div>
+                    <h2 class="service-detail-title">Software <span class="gradient-text">Maintenance</span></h2>
+                    <p class="service-detail-desc">
+                        Keep your software running at peak performance with our comprehensive maintenance and support services. We provide proactive monitoring, bug fixes, and feature enhancements.
+                    </p>
+                    <div class="service-features-list">
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon blue"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Bug Fixes & Patches</h5>
+                                <p>Quick resolution of issues to minimize downtime and disruption.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon blue"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Performance Monitoring</h5>
+                                <p>24/7 monitoring with proactive alerts and optimization.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon blue"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Security Updates</h5>
+                                <p>Regular security patches and vulnerability assessments.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon blue"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Feature Enhancements</h5>
+                                <p>Continuous improvement with new features and functionality updates.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary">
+                        Start Your Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-detail-visual reveal-right">
+                    <div class="service-visual-card">
+                        <div class="service-floating-shape service-floating-shape-1"></div>
+                        <div class="service-floating-shape service-floating-shape-2"></div>
+                        <div class="service-visual-icon blue"><i class="fas fa-tools"></i></div>
+                        <div class="service-visual-stats">
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">24/7</div>
+                                <div class="service-visual-stat-label">Support Available</div>
+                            </div>
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">4hrs</div>
+                                <div class="service-visual-stat-label">Avg Response Time</div>
+                            </div>
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">99%</div>
+                                <div class="service-visual-stat-label">Client Retention</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== SERVICE 12: Cloud Deployment ========== -->
+            <div class="service-detail-row reverse">
+                <div class="service-detail-content reveal-right">
+                    <div class="service-detail-badge orange">
+                        <i class="fas fa-cloud"></i> Cloud
+                    </div>
+                    <h2 class="service-detail-title">Cloud <span class="gradient-text">Deployment</span></h2>
+                    <p class="service-detail-desc">
+                        Deploy and scale your applications with confidence on leading cloud platforms. We handle infrastructure setup, CI/CD pipelines, and ongoing cloud management for optimal performance.
+                    </p>
+                    <div class="service-features-list">
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon orange"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>AWS & Azure</h5>
+                                <p>Expert deployment on Amazon Web Services, Microsoft Azure, and Google Cloud.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon orange"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>CI/CD Pipelines</h5>
+                                <p>Automated testing and deployment for continuous delivery.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon orange"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Auto Scaling</h5>
+                                <p>Dynamic resource allocation to handle traffic spikes efficiently.</p>
+                            </div>
+                        </div>
+                        <div class="service-feature-item">
+                            <div class="service-feature-icon orange"><i class="fas fa-check"></i></div>
+                            <div class="service-feature-text">
+                                <h5>Cost Optimization</h5>
+                                <p>Right-sizing infrastructure to minimize cloud spending without sacrificing performance.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary">
+                        Start Your Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="service-detail-visual reveal-left">
+                    <div class="service-visual-card">
+                        <div class="service-floating-shape service-floating-shape-1"></div>
+                        <div class="service-floating-shape service-floating-shape-2"></div>
+                        <div class="service-visual-icon orange"><i class="fas fa-cloud"></i></div>
+                        <div class="service-visual-stats">
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">50+</div>
+                                <div class="service-visual-stat-label">Cloud Deploys</div>
+                            </div>
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">99.99%</div>
+                                <div class="service-visual-stat-label">Uptime Achieved</div>
+                            </div>
+                            <div class="service-visual-stat">
+                                <div class="service-visual-stat-number">30%</div>
+                                <div class="service-visual-stat-label">Cost Savings</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TECHNOLOGIES WE USE ========== -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge reveal">
+                    <i class="fas fa-microchip"></i> Tech Stack
+                </div>
+                <h2 class="section-title reveal">
+                    Technologies We <span class="gradient-text">Leverage</span>
+                </h2>
+                <p class="section-subtitle reveal">
+                    We use the latest and most reliable technologies to build solutions that stand the test of time.
+                </p>
+            </div>
+
+            <div class="tech-marquee">
+                <div class="tech-track">
+                    <div class="tech-item">
+                        <div class="tech-item-icon"><i class="fab fa-laravel" style="color: #FF2D20;"></i></div>
+                        <span class="tech-item-name">Laravel</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-item-icon"><i class="fab fa-php" style="color: #777BB4;"></i></div>
+                        <span class="tech-item-name">PHP</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-item-icon"><i class="fab fa-flutter" style="color: #02569B;"></i></div>
+                        <span class="tech-item-name">Flutter</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-item-icon"><i class="fas fa-database" style="color: #4479A1;"></i></div>
+                        <span class="tech-item-name">MySQL</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-item-icon"><i class="fab fa-js" style="color: #F7DF1E;"></i></div>
+                        <span class="tech-item-name">JavaScript</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-item-icon"><i class="fab fa-react" style="color: #61DAFB;"></i></div>
+                        <span class="tech-item-name">React</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-item-icon"><i class="fab fa-node-js" style="color: #339933;"></i></div>
+                        <span class="tech-item-name">Node.js</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-item-icon"><i class="fab fa-bootstrap" style="color: #7952B3;"></i></div>
+                        <span class="tech-item-name">Bootstrap</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-item-icon"><i class="fab fa-git-alt" style="color: #F05032;"></i></div>
+                        <span class="tech-item-name">Git</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-item-icon"><i class="fab fa-aws" style="color: #FF9900;"></i></div>
+                        <span class="tech-item-name">AWS</span>
+                    </div>
+                    <!-- Duplicate for infinite scroll -->
+                    <div class="tech-item">
+                        <div class="tech-item-icon"><i class="fab fa-laravel" style="color: #FF2D20;"></i></div>
+                        <span class="tech-item-name">Laravel</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-item-icon"><i class="fab fa-php" style="color: #777BB4;"></i></div>
+                        <span class="tech-item-name">PHP</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-item-icon"><i class="fab fa-flutter" style="color: #02569B;"></i></div>
+                        <span class="tech-item-name">Flutter</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-item-icon"><i class="fas fa-database" style="color: #4479A1;"></i></div>
+                        <span class="tech-item-name">MySQL</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-item-icon"><i class="fab fa-js" style="color: #F7DF1E;"></i></div>
+                        <span class="tech-item-name">JavaScript</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-item-icon"><i class="fab fa-react" style="color: #61DAFB;"></i></div>
+                        <span class="tech-item-name">React</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-item-icon"><i class="fab fa-node-js" style="color: #339933;"></i></div>
+                        <span class="tech-item-name">Node.js</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-item-icon"><i class="fab fa-bootstrap" style="color: #7952B3;"></i></div>
+                        <span class="tech-item-name">Bootstrap</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-item-icon"><i class="fab fa-git-alt" style="color: #F05032;"></i></div>
+                        <span class="tech-item-name">Git</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-item-icon"><i class="fab fa-aws" style="color: #FF9900;"></i></div>
+                        <span class="tech-item-name">AWS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA SECTION ========== -->
+    <section class="section cta-section" id="cta">
+        <div class="cta-shape cta-shape-1"></div>
+        <div class="cta-shape cta-shape-2"></div>
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title reveal">Ready to Build Something Extraordinary?</h2>
+                <p class="cta-desc reveal">Let's discuss your project and find the perfect solution for your business needs. Get a free consultation today.</p>
+                <div class="cta-buttons reveal">
+                    <a href="contact.html" class="btn btn-white btn-lg">
+                        Start Your Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="tel:+923001234567" class="btn btn-glass btn-lg">
+                        <i class="fas fa-phone"></i> Call Us Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo.png" alt="IP Software Technologies" class="logo-img">
+                    </a>
+                    <p>Empowering businesses with cutting-edge software solutions. We build world-class digital products that transform industries.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="technologies.html"><i class="fas fa-chevron-right"></i> Technologies</a></li>
+                        <li><a href="team.html"><i class="fas fa-chevron-right"></i> Team</a></li>
+                        <li><a href="careers.html"><i class="fas fa-chevron-right"></i> Careers</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Web Development</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Laravel Development</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Mobile Apps</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> ERP Solutions</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> E-Commerce</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to our newsletter for the latest updates, insights, and tech news.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span class="current-year">2026</span> IP Software Technologies. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/923001234567" class="whatsapp-btn" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/particles.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
