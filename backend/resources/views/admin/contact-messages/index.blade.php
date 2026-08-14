@@ -56,13 +56,13 @@
                             <td>{{ $message->created_at->format('M d, Y') }}</td>
                             <td>
                                 <a href="{{ route('admin.contact-messages.show', $message) }}" class="btn btn-sm btn-info">
-                                    <i class="bi bi-eye"></i>
+                                    <i class="bi bi-eye me-1"></i> View
                                 </a>
-                                <form action="{{ route('admin.contact-messages.destroy', $message) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this message?')">
+                                <form action="{{ route('admin.contact-messages.destroy', $message) }}" method="POST" class="d-inline ms-1" onsubmit="return confirm('Are you sure you want to delete this message?')">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-sm btn-danger">
-                                        <i class="bi bi-trash"></i>
+                                        <i class="bi bi-trash me-1"></i> Delete
                                     </button>
                                 </form>
                             </td>
