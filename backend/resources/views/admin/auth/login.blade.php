@@ -13,10 +13,8 @@
         body {
             min-height: 100vh;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0B1120;
             position: relative;
             overflow: hidden;
         }
@@ -28,7 +26,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 60%);
+            background: radial-gradient(circle, rgba(29, 170, 216, 0.08) 0%, transparent 60%);
             animation: rotate 20s linear infinite;
         }
 
@@ -37,59 +35,104 @@
             to { transform: rotate(360deg); }
         }
 
-        .login-container {
+        .login-left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
             position: relative;
             z-index: 10;
-            width: 100%;
-            max-width: 420px;
-            padding: 20px;
         }
 
-        .login-card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 20px;
-            padding: 40px 35px;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
-        }
-
-        .login-logo {
+        .login-left .logo-wrap {
             text-align: center;
             margin-bottom: 30px;
         }
 
-        .login-logo .logo-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            border-radius: 16px;
-            display: inline-flex;
+        .login-left .logo-wrap img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .login-left .logo-wrap h2 {
+            color: #fff;
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .login-left .logo-wrap h2 span {
+            color: #ED8F28;
+        }
+
+        .login-left .logo-wrap p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            max-width: 280px;
+            line-height: 1.6;
+        }
+
+        .login-left .features {
+            margin-top: 30px;
+            list-style: none;
+        }
+
+        .login-left .features li {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 13px;
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .login-left .features li i {
+            color: #1DAAD8;
+            font-size: 14px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .login-divider {
+            width: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .login-right {
+            width: 480px;
+            display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 15px;
+            padding: 40px;
+            position: relative;
+            z-index: 10;
         }
 
-        .login-logo .logo-icon i {
-            font-size: 28px;
-            color: #fff;
+        .login-card {
+            width: 100%;
+            max-width: 380px;
         }
 
-        .login-logo h3 {
+        .login-card h3 {
             color: #fff;
             font-size: 22px;
             font-weight: 700;
             margin-bottom: 5px;
         }
 
-        .login-logo p {
+        .login-card .subtitle {
             color: rgba(255, 255, 255, 0.5);
             font-size: 14px;
+            margin-bottom: 28px;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             position: relative;
         }
 
@@ -98,7 +141,7 @@
             color: rgba(255, 255, 255, 0.7);
             font-size: 13px;
             font-weight: 500;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .form-group .input-wrapper {
@@ -117,7 +160,7 @@
         .form-group input[type="email"],
         .form-group input[type="password"] {
             width: 100%;
-            padding: 12px 14px 12px 42px;
+            padding: 11px 14px 11px 42px;
             background: rgba(255, 255, 255, 0.07);
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 10px;
@@ -128,9 +171,9 @@
         }
 
         .form-group input:focus {
-            border-color: #6366f1;
+            border-color: #1DAAD8;
             background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+            box-shadow: 0 0 0 3px rgba(29, 170, 216, 0.2);
         }
 
         .form-group input::placeholder {
@@ -141,7 +184,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 25px;
+            margin-bottom: 22px;
         }
 
         .remember-row label {
@@ -156,14 +199,14 @@
         .remember-row input[type="checkbox"] {
             width: 16px;
             height: 16px;
-            accent-color: #6366f1;
+            accent-color: #1DAAD8;
             cursor: pointer;
         }
 
         .btn-login {
             width: 100%;
-            padding: 13px;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            padding: 12px;
+            background: linear-gradient(135deg, #1DAAD8, #ED8F28);
             color: #fff;
             border: none;
             border-radius: 10px;
@@ -171,13 +214,11 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
         }
 
         .btn-login:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+            box-shadow: 0 8px 25px rgba(29, 170, 216, 0.4);
         }
 
         .btn-login:active {
@@ -188,10 +229,10 @@
             background: rgba(239, 68, 68, 0.15);
             border: 1px solid rgba(239, 68, 68, 0.3);
             color: #fca5a5;
-            padding: 12px 16px;
+            padding: 10px 14px;
             border-radius: 10px;
             font-size: 13px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -205,18 +246,38 @@
             color: rgba(255, 255, 255, 0.3);
             font-size: 12px;
         }
+
+        @media (max-width: 991px) {
+            body { flex-direction: column; }
+            .login-left { padding: 30px 20px 20px; }
+            .login-left .features { display: none; }
+            .login-divider { width: 100%; height: 1px; }
+            .login-right { width: 100%; padding: 20px 30px 30px; }
+        }
     </style>
 </head>
 <body>
-    <div class="login-container">
+    <div class="login-left">
+        <div class="logo-wrap">
+            <img src="{{ asset('images/logo.png') }}" alt="IP Software Technologies">
+            <h2>IP Software <span>Technologies</span></h2>
+            <p>Manage your website content, projects, and team from one powerful admin panel.</p>
+        </div>
+        <ul class="features">
+            <li><i class="fas fa-check-circle"></i> Content Management System</li>
+            <li><i class="fas fa-check-circle"></i> Project & Portfolio Manager</li>
+            <li><i class="fas fa-check-circle"></i> Team & Career Management</li>
+            <li><i class="fas fa-check-circle"></i> SEO & Website Settings</li>
+            <li><i class="fas fa-check-circle"></i> Contact Message Inbox</li>
+        </ul>
+    </div>
+
+    <div class="login-divider"></div>
+
+    <div class="login-right">
         <div class="login-card">
-            <div class="login-logo">
-                <div class="logo-icon">
-                    <i class="fas fa-code"></i>
-                </div>
-                <h3>IP Software Admin</h3>
-                <p>Sign in to your admin panel</p>
-            </div>
+            <h3>Welcome Back</h3>
+            <p class="subtitle">Sign in to your admin panel</p>
 
             @if($errors->any())
                 <div class="alert-error">

@@ -5,13 +5,13 @@
 @section('content')
 <div class="page-header">
     <h2>Dashboard</h2>
-    <span class="text-muted">Welcome back, {{ Auth::user()->name ?? 'Admin' }}!</span>
+    <span class="text-muted" style="font-size:14px;">Welcome back, {{ Auth::user()->name ?? 'Admin' }}!</span>
 </div>
 
 <div class="row g-4 mb-4">
     <div class="col-xl-2 col-md-4 col-sm-6">
         <div class="stat-card">
-            <div class="stat-icon" style="background:#ede9fe;color:#7c3aed;">
+            <div class="stat-icon" style="background:rgba(29,170,216,0.12);color:#1DAAD8;">
                 <i class="fas fa-cogs"></i>
             </div>
             <h3>{{ $totalServices ?? 0 }}</h3>
@@ -20,7 +20,7 @@
     </div>
     <div class="col-xl-2 col-md-4 col-sm-6">
         <div class="stat-card">
-            <div class="stat-icon" style="background:#dbeafe;color:#2563eb;">
+            <div class="stat-icon" style="background:rgba(237,143,40,0.12);color:#ED8F28;">
                 <i class="fas fa-folder-open"></i>
             </div>
             <h3>{{ $totalProjects ?? 0 }}</h3>
@@ -29,7 +29,7 @@
     </div>
     <div class="col-xl-2 col-md-4 col-sm-6">
         <div class="stat-card">
-            <div class="stat-icon" style="background:#fef3c7;color:#d97706;">
+            <div class="stat-icon" style="background:rgba(29,170,216,0.12);color:#1DAAD8;">
                 <i class="fas fa-quote-left"></i>
             </div>
             <h3>{{ $totalTestimonials ?? 0 }}</h3>
@@ -38,7 +38,7 @@
     </div>
     <div class="col-xl-2 col-md-4 col-sm-6">
         <div class="stat-card">
-            <div class="stat-icon" style="background:#dcfce7;color:#16a34a;">
+            <div class="stat-icon" style="background:rgba(237,143,40,0.12);color:#ED8F28;">
                 <i class="fas fa-users"></i>
             </div>
             <h3>{{ $totalTeam ?? 0 }}</h3>
@@ -47,7 +47,7 @@
     </div>
     <div class="col-xl-2 col-md-4 col-sm-6">
         <div class="stat-card">
-            <div class="stat-icon" style="background:#fce7f3;color:#db2777;">
+            <div class="stat-icon" style="background:rgba(29,170,216,0.12);color:#1DAAD8;">
                 <i class="fas fa-microchip"></i>
             </div>
             <h3>{{ $totalTechnologies ?? 0 }}</h3>
@@ -56,7 +56,7 @@
     </div>
     <div class="col-xl-2 col-md-4 col-sm-6">
         <div class="stat-card">
-            <div class="stat-icon" style="background:#fee2e2;color:#dc2626;">
+            <div class="stat-icon" style="background:rgba(237,143,40,0.12);color:#ED8F28;">
                 <i class="fas fa-envelope"></i>
             </div>
             <h3>{{ $pendingMessages ?? 0 }}</h3>
@@ -73,25 +73,25 @@
     </div>
     <div class="col-xl-3 col-md-6">
         <a href="{{ route('admin.services.create') }}" class="quick-action">
-            <i class="fas fa-plus-circle" style="color:#7c3aed;"></i>
+            <i class="fas fa-plus-circle" style="color:#1DAAD8;"></i>
             Add New Service
         </a>
     </div>
     <div class="col-xl-3 col-md-6">
         <a href="{{ route('admin.projects.create') }}" class="quick-action">
-            <i class="fas fa-plus-circle" style="color:#2563eb;"></i>
+            <i class="fas fa-plus-circle" style="color:#ED8F28;"></i>
             Add New Project
         </a>
     </div>
     <div class="col-xl-3 col-md-6">
         <a href="{{ route('admin.testimonials.create') }}" class="quick-action">
-            <i class="fas fa-plus-circle" style="color:#d97706;"></i>
+            <i class="fas fa-plus-circle" style="color:#1DAAD8;"></i>
             Add Testimonial
         </a>
     </div>
     <div class="col-xl-3 col-md-6">
         <a href="{{ route('admin.contact-messages.index') }}" class="quick-action">
-            <i class="fas fa-envelope" style="color:#dc2626;"></i>
+            <i class="fas fa-envelope" style="color:#ED8F28;"></i>
             View Messages
         </a>
     </div>

@@ -4,19 +4,25 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // ---------- Page Loader ----------
-    const pageLoader = document.querySelector('.page-loader');
+    const pageLoader = document.getElementById('pageLoader');
     if (pageLoader) {
-        window.addEventListener('load', function() {
+        if (sessionStorage.getItem('loaderShown')) {
+            pageLoader.classList.add('loaded');
+            document.body.classList.remove('loading');
+        } else {
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    pageLoader.classList.add('loaded');
+                    document.body.classList.remove('loading');
+                    sessionStorage.setItem('loaderShown', '1');
+                }, 2000);
+            });
             setTimeout(function() {
                 pageLoader.classList.add('loaded');
                 document.body.classList.remove('loading');
-            }, 2000);
-        });
-        // Fallback - remove loader after 4 seconds max
-        setTimeout(function() {
-            pageLoader.classList.add('loaded');
-            document.body.classList.remove('loading');
-        }, 4000);
+                sessionStorage.setItem('loaderShown', '1');
+            }, 4000);
+        }
     }
 
     // ---------- Scroll Progress Bar ----------

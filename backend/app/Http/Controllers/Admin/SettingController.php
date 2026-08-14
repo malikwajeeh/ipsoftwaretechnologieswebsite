@@ -20,18 +20,13 @@ class SettingController extends Controller
 
     public function update(Request $request)
     {
-        $validated = $request->validate([
-            'settings' => 'required|array',
-            'settings.*.key_name' => 'required|string|max:255',
-            'settings.*.value' => 'nullable|string',
-            'settings.*.group_name' => 'nullable|string|max:255',
-        ]);
+        $settings = $request->input('settings', []);
 
-        foreach ($validated['settings'] as $settingData) {
+        foreach ($settings as $data) {
             WebsiteSetting::set(
-                $settingData['key_name'],
-                $settingData['value'],
-                $settingData['group_name'] ?? 'general'
+                $data['key_name'],
+                $data['value'] ?? '',
+                $data['group_name'] ?? 'general'
             );
         }
 

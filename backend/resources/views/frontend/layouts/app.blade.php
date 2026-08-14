@@ -29,8 +29,11 @@
 </head>
 <body class="loading">
     <!-- Page Loader -->
-    <div class="page-loader">
-        <div class="loader-logo">IP <span>Software</span></div>
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <img src="{{ asset('images/logo.png') }}" alt="IP Software Technologies" class="loader-logo-img">
+            <h2 class="loader-text">IP Software <span>Technologies</span></h2>
+        </div>
         <div class="loader-bar"></div>
     </div>
     
@@ -40,19 +43,45 @@
     <!-- Cursor Follower -->
     <div class="cursor-follower"></div>
     
+    @php
+        use App\Models\WebsiteSetting;
+        $companyEmail = WebsiteSetting::get('company_email', '');
+        $companyPhone = WebsiteSetting::get('company_phone', '');
+        $companyPhone2 = WebsiteSetting::get('company_phone_2', '');
+        $companyAddress = WebsiteSetting::get('company_address', '');
+        $facebookLink = WebsiteSetting::get('facebook_link', '');
+        $instagramLink = WebsiteSetting::get('instagram_link', '');
+        $linkedinLink = WebsiteSetting::get('linkedin_link', '');
+        $twitterLink = WebsiteSetting::get('twitter_link', '');
+    @endphp
+
     <!-- Pre-Header -->
     <div class="pre-header">
         <div class="container">
             <div class="pre-header-left">
-                <a href="mailto:info@ipsoftwaretechnologies.com"><i class="fas fa-envelope"></i> info@ipsoftwaretechnologies.com</a>
-                <a href="tel:+923001234567"><i class="fas fa-phone-alt"></i> +92 300 123 4567</a>
-                <span class="pre-header-address"><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</span>
+                @if($companyEmail)
+                    <a href="mailto:{{ $companyEmail }}"><i class="fas fa-envelope"></i> {{ $companyEmail }}</a>
+                @endif
+                @if($companyPhone)
+                    <a href="tel:{{ str_replace(' ', '', $companyPhone) }}"><i class="fas fa-phone-alt"></i> {{ $companyPhone }}{{ $companyPhone2 ? ', ' . $companyPhone2 : '' }}</a>
+                @endif
+                @if($companyAddress)
+                    <span class="pre-header-address"><i class="fas fa-map-marker-alt"></i> {{ $companyAddress }}</span>
+                @endif
             </div>
             <div class="pre-header-right">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                @if($facebookLink)
+                    <a href="{{ $facebookLink }}" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                @endif
+                @if($instagramLink)
+                    <a href="{{ $instagramLink }}" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                @endif
+                @if($linkedinLink)
+                    <a href="{{ $linkedinLink }}" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                @endif
+                @if($twitterLink)
+                    <a href="{{ $twitterLink }}" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                @endif
             </div>
         </div>
     </div>
@@ -73,7 +102,7 @@
                 <a href="{{ route('contact') }}" class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a>
             </nav>
             
-            <a href="{{ route('contact') }}" class="btn btn-primary btn-sm nav-cta">Get a Quote</a>
+            <a href="{{ route('contact') }}" class="btn btn-primary btn-sm nav-cta">Contact Us</a>
             
             <div class="hamburger">
                 <span></span>
@@ -91,7 +120,7 @@
         <a href="{{ route('projects') }}" class="nav-link {{ request()->routeIs('projects*') ? 'active' : '' }}">Projects</a>
         <a href="{{ route('careers') }}" class="nav-link {{ request()->routeIs('careers') ? 'active' : '' }}">Careers</a>
         <a href="{{ route('contact') }}" class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a>
-        <a href="{{ route('contact') }}" class="btn btn-primary" style="margin-top: 20px;">Get a Quote</a>
+        <a href="{{ route('contact') }}" class="btn btn-primary" style="margin-top: 20px;">Contact Us</a>
     </div>
     
     <!-- Main Content -->

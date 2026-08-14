@@ -14,13 +14,8 @@
 
 <form action="{{ route('admin.settings.update') }}" method="POST">
     @csrf
-    @method('PUT')
 
-    @php
-        $groupedSettings = $settings->groupBy('group_name');
-    @endphp
-
-    @foreach($groupedSettings as $groupName => $groupSettings)
+    @foreach($settings as $groupName => $groupSettings)
         <div class="card mb-4">
             <div class="card-header">
                 <h5 class="mb-0">{{ ucfirst($groupName ?? 'General') }}</h5>
@@ -28,34 +23,33 @@
             <div class="card-body">
                 @foreach($groupSettings as $setting)
                     <div class="mb-3">
-                        <label for="setting_{{ $setting->id }}" class="form-label">
-                            {{ ucfirst(str_replace('_', ' ', $setting->key)) }}
+                        <label for="setting_{{ $setting->key_name }}" class="form-label">
+                            {{ ucfirst(str_replace('_', ' ', $setting->key_name)) }}
                         </label>
 
                         @if(strlen($setting->value ?? '') > 100)
                             <textarea
-                                class="form-control @error('settings.' . $setting->id) is-invalid @enderror"
-                                id="setting_{{ $setting->id }}"
-                                name="settings[{{ $setting->id }}]"
+                                class="form-control @error('settings.' . $setting->key_name) is-invalid @enderror"
+                                id="setting_{{ $setting->key_name }}"
+                                name="settings[{{ $setting->key_name }}][value]"
                                 rows="4"
-                            >{{ old('settings.' . $setting->id, $setting->value) }}</textarea>
+                            >{{ old('settings.' . $setting->key_name . '.value', $setting->value) }}</textarea>
                         @else
                             <input
                                 type="text"
-                                class="form-control @error('settings.' . $setting->id) is-invalid @enderror"
-                                id="setting_{{ $setting->id }}"
-                                name="settings[{{ $setting->id }}]"
-                                value="{{ old('settings.' . $setting->id, $setting->value) }}"
+                                class="form-control @error('settings.' . $setting->key_name) is-invalid @enderror"
+                                id="setting_{{ $setting->key_name }}"
+                                name="settings[{{ $setting->key_name }}][value]"
+                                value="{{ old('settings.' . $setting->key_name . '.value', $setting->value) }}"
                             >
                         @endif
 
-                        @error('settings.' . $setting->id)
+                        <input type="hidden" name="settings[{{ $setting->key_name }}][key_name]" value="{{ $setting->key_name }}">
+                        <input type="hidden" name="settings[{{ $setting->key_name }}][group_name]" value="{{ $setting->group_name }}">
+
+                        @error('settings.' . $setting->key_name)
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
-
-                        @if($setting->description)
-                            <div class="form-text">{{ $setting->description }}</div>
-                        @endif
                     </div>
                 @endforeach
             </div>
@@ -72,7 +66,7 @@
 
     <div class="d-flex gap-2">
         <button type="submit" class="btn btn-primary">
-            <i class="bi bi-save"></i> Save All Settings
+            <i class="fas fa-save"></i> Save All Settings
         </button>
     </div>
 </form>

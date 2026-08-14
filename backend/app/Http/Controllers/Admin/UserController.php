@@ -12,7 +12,7 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware(function ($request, $next) {
-            if (!auth()->check() || !auth()->user()->is_admin) {
+            if (!auth()->check() || !auth()->user()->isAdmin()) {
                 abort(403, 'Unauthorized. Only administrators can manage users.');
             }
             return $next($request);
