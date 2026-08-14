@@ -4,7 +4,7 @@
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h1 class="h3 mb-0">Contact Messages</h1>
     <div>
-        <span class="badge bg-primary">{{ $messages->total() }} Total</span>
+        <span class="badge bg-primary">{{ $contactMessages->total() }} Total</span>
     </div>
 </div>
 
@@ -30,7 +30,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse($messages as $message)
+                    @forelse($contactMessages as $message)
                         <tr>
                             <td>{{ $message->name }}</td>
                             <td>{{ $message->email }}</td>
@@ -75,7 +75,7 @@
                 </tbody>
             </table>
         </div>
-        {{ $messages->links() }}
+        {{ $contactMessages->links() }}
     </div>
 </div>
 @endsection
