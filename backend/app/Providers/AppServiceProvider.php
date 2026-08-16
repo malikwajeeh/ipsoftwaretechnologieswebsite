@@ -17,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         View::composer('frontend.layouts.app', function ($view) {
-            if ($view->offsetGet('seo_title')) {
+            if ($view->offsetExists('seo_title')) {
                 return;
             }
 
