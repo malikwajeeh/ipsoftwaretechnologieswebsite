@@ -1,9 +1,5 @@
 @extends('frontend.layouts.app')
 
-@section('title', 'About Us | IP Software Technologies')
-@section('meta_description', 'About IP Software Technologies - Learn about our mission, vision, values, and the passionate team behind world-class software solutions.')
-@section('meta_keywords', 'about IP Software Technologies, software company, our story, mission, vision, team')
-
 @section('content')
     <section class="page-hero">
         <div class="page-hero-mesh">

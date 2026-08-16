@@ -1,9 +1,5 @@
 @extends('frontend.layouts.app')
 
-@section('title', 'IP Software Technologies | Premium Software Development Company')
-@section('meta_description', 'IP Software Technologies - Premium Software Development Company. We build world-class web applications, mobile apps, ERP systems, and custom software solutions.')
-@section('meta_keywords', 'software house, web development, laravel, php, flutter, ERP, CRM, mobile app development')
-
 @section('content')
     <!-- ========== HERO SECTION ========== -->
     <section class="hero" id="home">

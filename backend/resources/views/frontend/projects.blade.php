@@ -1,9 +1,5 @@
 @extends('frontend.layouts.app')
 
-@section('title', 'Our Projects | IP Software Technologies')
-@section('meta_description', 'IP Software Technologies - Explore our portfolio of successful projects including web applications, mobile apps, ERP systems, and e-commerce platforms.')
-@section('meta_keywords', 'projects, portfolio, web development, mobile apps, ERP, e-commerce, Laravel, Flutter')
-
 @section('content')
     <section class="page-hero">
         <div class="page-hero-bg">

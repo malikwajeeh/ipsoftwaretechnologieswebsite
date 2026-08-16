@@ -1,9 +1,5 @@
 @extends('frontend.layouts.app')
 
-@section('title', 'Our Services | IP Software Technologies')
-@section('meta_description', 'IP Software Technologies - Our Services. Custom web development, Laravel, PHP, Flutter apps, ERP, CRM, e-commerce, API development, UI/UX design, and more.')
-@section('meta_keywords', 'web development services, laravel development, php development, flutter app, ERP solutions, CRM development, e-commerce, API development, UI/UX design')
-
 @section('content')
     <section class="page-hero">
         <div class="hero-mesh">

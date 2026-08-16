@@ -1,9 +1,5 @@
 @extends('frontend.layouts.app')
 
-@section('title', $project->title . ' | IP Software Technologies')
-@section('meta_description', $project->description ?? 'IP Software Technologies - ' . $project->title)
-@section('meta_keywords', $project->title . ', IP Software Technologies, software project')
-
 @section('content')
     <section class="page-hero">
         <div class="page-hero-bg">

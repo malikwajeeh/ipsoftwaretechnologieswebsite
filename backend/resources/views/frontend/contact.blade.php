@@ -1,9 +1,5 @@
 @extends('frontend.layouts.app')
 
-@section('title', 'Contact Us | IP Software Technologies')
-@section('meta_description', 'Contact IP Software Technologies - Get in touch for custom software development, web applications, mobile apps, ERP solutions, and more.')
-@section('meta_keywords', 'contact, software development, web development, laravel, php, flutter, ERP, CRM, mobile app development')
-
 @section('content')
     <section class="page-hero">
         <div class="page-hero-bg">

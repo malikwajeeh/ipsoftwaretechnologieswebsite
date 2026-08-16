@@ -1,9 +1,5 @@
 @extends('frontend.layouts.app')
 
-@section('title', $service->title . ' | IP Software Technologies')
-@section('meta_description', $service->short_description ?? $service->description ?? 'IP Software Technologies - ' . $service->title)
-@section('meta_keywords', $service->title . ', IP Software Technologies, software development')
-
 @section('content')
     <section class="page-hero">
         <div class="hero-mesh">

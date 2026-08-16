@@ -1,9 +1,5 @@
 @extends('frontend.layouts.app')
 
-@section('title', 'Careers | IP Software Technologies')
-@section('meta_description', 'Join IP Software Technologies - Explore exciting career opportunities in web development, mobile apps, UI/UX design, and more.')
-@section('meta_keywords', 'careers, jobs, software developer, laravel developer, flutter developer, UI/UX designer, PHP developer')
-
 @section('content')
     <section class="hero" style="min-height: 50vh;">
         <div class="hero-bg">

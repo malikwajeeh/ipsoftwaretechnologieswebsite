@@ -1,9 +1,5 @@
 @extends('frontend.layouts.app')
 
-@section('title', 'Testimonials | IP Software Technologies')
-@section('meta_description', 'Read what our clients say about IP Software Technologies. Real testimonials from businesses we have helped with web development, mobile apps, ERP systems, and custom software solutions.')
-@section('meta_keywords', 'client testimonials, software company reviews, IP Software Technologies feedback, client success stories')
-
 @section('content')
     <section class="page-hero">
         <div class="page-hero-mesh">

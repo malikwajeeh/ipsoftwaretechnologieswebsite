@@ -17,6 +17,11 @@ class ServiceController extends Controller
     {
         $service = Service::where('slug', $slug)->where('is_active', true)->firstOrFail();
         $relatedServices = Service::where('is_active', true)->where('id', '!=', $service->id)->orderBy('order_number')->take(3)->get();
-        return view('frontend.service-detail', compact('service', 'relatedServices'));
+
+        $seo_title = ($service->title ?? 'Service') . ' | IP Software Technologies';
+        $seo_description = $service->short_description ?? $service->description ?? 'IP Software Technologies - ' . $service->title;
+        $seo_keywords = $service->title . ', IP Software Technologies, software development';
+
+        return view('frontend.service-detail', compact('service', 'relatedServices', 'seo_title', 'seo_description', 'seo_keywords'));
     }
 }

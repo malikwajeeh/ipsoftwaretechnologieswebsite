@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="@yield('meta_description', 'IP Software Technologies - Premium Software Development Company')">
-    <meta name="keywords" content="@yield('meta_keywords', 'software house, web development, laravel, php, flutter')">
-    <title>@yield('title', 'IP Software Technologies')</title>
+    <meta name="description" content="{{ $seo_description }}">
+    <meta name="keywords" content="{{ $seo_keywords }}">
+    <title>{{ $seo_title }}</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ $seo_title }}">
+    <meta property="og:description" content="{{ $seo_description }}">
+    <meta property="og:type" content="website">
+    @if($seo_og_image)
+        <meta property="og:image" content="{{ asset('storage/' . $seo_og_image) }}">
+    @endif
+    @if($seo_canonical)
+        <link rel="canonical" href="{{ $seo_canonical }}">
+    @endif
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">

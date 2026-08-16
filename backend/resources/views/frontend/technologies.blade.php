@@ -1,9 +1,5 @@
 @extends('frontend.layouts.app')
 
-@section('title', 'Our Technologies | IP Software Technologies')
-@section('meta_description', 'IP Software Technologies - Our Technology Stack. Explore the modern technologies we use: Laravel, PHP, Flutter, React, Node.js, MySQL, and more.')
-@section('meta_keywords', 'technologies, laravel, php, flutter, react, node.js, mysql, javascript, html5, css3, bootstrap, git, github, aws')
-
 @section('content')
     <section class="page-hero">
         <div class="page-hero-mesh">

@@ -19,6 +19,11 @@ class ProjectController extends Controller
     {
         $project = Project::where('slug', $slug)->where('is_active', true)->with('category')->firstOrFail();
         $relatedProjects = Project::where('is_active', true)->where('id', '!=', $project->id)->orderBy('order_number')->take(3)->get();
-        return view('frontend.project-detail', compact('project', 'relatedProjects'));
+
+        $seo_title = ($project->title ?? 'Project') . ' | IP Software Technologies';
+        $seo_description = $project->description ?? 'IP Software Technologies - ' . $project->title;
+        $seo_keywords = $project->title . ', IP Software Technologies, software project';
+
+        return view('frontend.project-detail', compact('project', 'relatedProjects', 'seo_title', 'seo_description', 'seo_keywords'));
     }
 }
