@@ -106,23 +106,42 @@
             </div>
 
             <div class="projects-grid">
+                @php
+                    $fallbackImages = [
+                        'healthtrack-pro' => 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600',
+                        'shopease' => 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600',
+                        'fleetguard' => 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600',
+                        'eduverse-lms' => 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600',
+                        'agrismart' => 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=600',
+                        'foodieapp' => 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600',
+                    ];
+                    $defaultFallback = 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600';
+                @endphp
                 @foreach($relatedProjects as $related)
                 <div class="project-card" data-category="{{ $related->category->slug ?? 'web' }}">
                     @if($related->image)
                         <img src="{{ Storage::url($related->image) }}" alt="{{ $related->title }}" loading="lazy">
                     @else
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600" alt="{{ $related->title }}" loading="lazy">
+                        <img src="{{ $fallbackImages[$related->slug] ?? $defaultFallback }}" alt="{{ $related->title }}" loading="lazy">
                     @endif
                     <div class="project-overlay">
-                        <span class="project-category">{{ $related->category->name ?? 'Web Application' }}</span>
-                        <h3 class="project-title">{{ $related->title }}</h3>
-                        @if($related->technologies && count($related->technologies) > 0)
-                        <div class="project-techs">
-                            @foreach($related->technologies as $tech)
-                                <span class="project-tech">{{ $tech }}</span>
-                            @endforeach
+                        <div class="project-overlay-content">
+                            <span class="project-category">{{ $related->category->name ?? 'Web Application' }}</span>
+                            <h3 class="project-title">{{ $related->title }}</h3>
+                            @if($related->short_description)
+                                <p class="project-desc">{{ $related->short_description }}</p>
+                            @endif
+                            @if($related->technologies && count($related->technologies) > 0)
+                            <div class="project-techs">
+                                @foreach(array_slice($related->technologies, 0, 4) as $tech)
+                                    <span class="project-tech">{{ $tech }}</span>
+                                @endforeach
+                            </div>
+                            @endif
+                            <div class="project-action">
+                                <span class="project-view-btn">View Details <i class="fas fa-arrow-right"></i></span>
+                            </div>
                         </div>
-                        @endif
                     </div>
                 </div>
                 @endforeach

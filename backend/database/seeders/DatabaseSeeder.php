@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             ServiceSeeder::class,
             TechnologySeeder::class,
             ProjectCategorySeeder::class,
+            DummyProjectSeeder::class,
             IndustrySeeder::class,
             WhyChooseUsSeeder::class,
             ProcessSeeder::class,
